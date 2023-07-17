@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <!-- Faviocon -->
+  <link rel="shortcut icon" href="images/icons8-location-48.png" type="image/x-icon">
+ <!-- Basic -->
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <!-- Mobile Metas -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+ <!-- Site Metas -->
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="author" content="" />
+
+ <title>Tracker Point</title>
+
+ <!-- slider stylesheet -->
+ <link rel="stylesheet" type="text/css"
+   href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+ <!-- font wesome stylesheet -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+ <!-- bootstrap core css -->
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+ <!-- fonts style -->
+ <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+ <!-- Custom styles for this template -->
+ <link href="css/style.css" rel="stylesheet" />
+ <!-- responsive style -->
+ <link href="css/responsive.css" rel="stylesheet" />
+
+ <style>
+  .my-button {
+    /* Button styles */
+    display: inline-block;
+    padding: 6px 20px;
+    background-color: #e93f1a;
+    color: #ffffff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  .my-button:hover {
+    background-color: transparent;
+    border-color: #e93f1a;
+    color: #e93f1a;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .main-con {
+    /* border: 2px solid rgb(71, 240, 4); */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .con-1{
+    /* border: 2px solid rgb(252, 4, 4); */
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .con-2 {
+    /* border: 2px solid rgb(252, 4, 4); */
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .con-1 img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .con,
+  .conn {
+    /* border: 2px solid rgb(5, 9, 250); */
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .high {
+    color: #e93f1a;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  .low {
+    color: green;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+      /* Styles for the image */
+      .responsive-img {
+      margin-top: 3rem;
+      max-width: 100%;
+      height: auto;
+    }
+
+  /* Responsive styles */
+  @media (min-width: 576px) {
+    .main-con {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .con-1,
+    .con-2 {
+      width: 50%;
+      margin-left: 30px;
+    }
+  }
+
+    /* Responsive styles */
+    @media (max-width: 576px) {
+      .responsive-img {
+        width: 100%;
+      }
+    }
+
+</style>
+
+</head>
+
+<body class="sub_page">
+ <div class="hero_area">
+   <!-- header section strats -->
+   <header class="header_section">
+     <div class="container">
+       <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+         <a class="navbar-brand mr-5" href="/home">
+           <img src="images/location-o.png" alt="">
+           <span>
+             Trackerz Point
+           </span>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+             <ul class="navbar-nav  ">
+               <li class="nav-item ">
+                 <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item active">
+                 <a class="nav-link" href="/about"> About </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="/service"> Service </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="/contact">Contact </a>
+               </li>
+             </ul>
+             <a style="color: #ffffff; margin-top: -12px;" href="/profile">
+               <button style="border-radius:60px;" class="my-button" >
+                  Profile
+               </button>
+               </a>
+           </div>
+         </div>
+       </nav>
+     </div>
+   </header>
+   <!-- end header section -->
+ </div>
+
+  <!-- info section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading_container">
+
+          <h3 style="margin-top: 30px; font-weight: bold; color: #030303;">
+            Product Details    
+          </h3>
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div style="background-color: transparent; height: auto; ">
+
+          <div>
+            <div class="main-con">
+            <div class="con-1">
+              <h5 id="brand"></h5>
+              <h6 style="font-weight: bold;"  id="title"></h6>
+             <span  id="price"><h6 class="price"></h6></span> 
+             <div id="image"> <img src="${image}" alt="Product Image"></div>
+            </div>
+            <div class="con-2">
+              <div class="con">
+                <h6 class="low"> Lowest Price: ${lowestPrice}</h6>
+                <h6 class="high"> Highest Price: ${highestPrice}</h6>
+              </div>
+              <div class="conn">
+                <label>Please input your email id whenever price drops, you will get notified on your given email....</label>
+                <br>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email"><br>
+                <button class="my-button" onclick="createAlert()">Alert</button>
+                <button class="my-button"  onclick="stopAlert()">Stop Tracking</button><br>
+                <img class="responsive-img" src="images/price_charts_2.png" alt="not found">
+              </div>
+            </div>  
+          </div> 
+        </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+          <script>        
+              
+              // Function to extract the URL from the query parameter
+              function getUrlFromQueryParameter() {
+                  const queryString = window.location.search;
+                  const urlParams = new URLSearchParams(queryString);
+                  const url = urlParams.get('url');
+                  return decodeURIComponent(url);
+              }
+  
+              // Function to fetch the product details and display the result
+              async function scrapeProductDetails() {
+                  const url = getUrlFromQueryParameter();
+                  if (url === null || url === "") {
+                      alert("Invalid URL");
+                    return;
+                  }   
+                  
+  
+                  const response = await fetch(`/scrape?url=${encodeURIComponent(url)}`);
+                  const data = await response.json();
+  
+                  //   // Display the scraped product details
+                  //   const result = document.getElementById("result");
+                  //   result.innerHTML = `<h2>Scraped Product Details</h2>`;
+  
+                  const brand = document.getElementById("brand");
+                  brand.innerHTML = ` ${data.brand}`;
+  
+                  const price = document.getElementById("price");
+                  price.innerHTML = ` ${data.price}`;
+  
+                  const image = document.getElementById("image");
+                  image.innerHTML = ` <img src="${data.image}" alt="Product Image">`;
+  
+                  const title = document.getElementById("title");
+                  title.innerHTML = ` ${data.title}`;
+              }
+  
+      // Function to create an alert
+      function createAlert() {
+        const email = document.getElementById("email").value;
+        const url = getUrlFromQueryParameter();
+  
+        if (url === null || url === "") {
+          alert("Invalid URL");
+          return;
+        }
+  
+        if (email === "") {
+          alert("Please enter your email");
+          return;
+        }
+  
+        fetch(`/startTracking?url=${encodeURIComponent(url)}&email=${encodeURIComponent(email)}`)
+          .then(response => {
+            if (response.ok) {
+              alert("Alert created successfully");
+            } else {
+              alert("Failed to create alert");
+            }
+          })
+          .catch(error => {
+            alert("Failed to create alert");
+            console.error(error);
+          });
+      }
+  
+      // Function to stop an alert
+      function stopAlert() {
+        const url = getUrlFromQueryParameter();
+  
+        if (url === null || url === "") {
+          alert("Invalid URL");
+          return;
+        }
+  
+        fetch(`/stopTracking?url=${encodeURIComponent(url)}`)
+          .then(response => {
+            if (response.ok) {
+              alert("Alert stopped successfully");
+            } else {
+              alert("Failed to stop alert");
+            }
+          })
+          .catch(error => {
+            alert("Failed to stop alert");
+            console.error(error);
+          });
+      }
+  
+              // Call the scrapeProductDetails function when the page loads
+              window.onload = scrapeProductDetails;
+          </script>
+
+        </div>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      © 2021. All Rights Reserved.
+      <a href="/">Trackerz Point</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

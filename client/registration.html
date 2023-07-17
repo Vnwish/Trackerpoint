@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!-- Faviocon -->
+   <link rel="shortcut icon" href="images/icons8-location-48.png" type="image/x-icon">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Tracker Point</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/registration.css">
+
+  <style>
+    .my-button {
+  /* Button styles */
+  display: inline-block;
+    padding: 6px 20px;
+    background-color: #e93f1a;
+    color: #ffffff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    border-radius: 5px;
+ 
+}
+
+.my-button:hover {
+  background-color:transparent;
+  border-color: #e93f1a;
+  color: #e93f1a;
+}
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand mr-5" href="/">
+            <img src="images/location-o.png" alt="">
+            <span>
+              Trackerz Point
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+
+                    <a class="navbar-brand mr-5" href="/">
+                        <img src="images/icons8-home-24.png" alt="">
+                      
+                          <h9 style="color: #ffffff;">Home</h9>
+                       
+                      </a>
+                </li>
+              </ul>
+              <a style="color: #ffffff;" href="/login">
+                <button class="my-button" >
+                Sign In
+                </button>
+                </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <section>
+    <div class="form-box">
+        <div class="form-value">
+            <form action="/signup" method="POST" onsubmit="return validateForm()">
+                <h2>Sign Up</h2>
+                <div class="inputbox">   
+                  <input type="email" id="email" name="email"  required>
+                  <label for="">Email</label>
+              </div>
+                <div class="inputbox">
+                  <input type="text" id="username" name="username" required>
+                    <label for="">User Name</label>
+                </div>
+                <div class="inputbox">
+                  <input type="tel" id="phone" name="phone"  required>
+                  <label for="">Phone Number</label>
+              </div>  
+                 
+                <div class="inputbox">
+                  <input type="password" id="password" name="password"  required>
+                    <label for="">password</label>
+                </div>
+                <div class="inputbox">
+                  <input type="password" id="confirmPassword" name="confirmPassword"  required>
+                  <label for="">Confirm password</label>
+              </div>
+                <!-- <div class="inputbox">
+                    <input type="number" name="mobileno" required>1
+                    <label for="">Contact Number</label>
+                </div> -->
+                <div style="color: red; margin-left: 20px;" id="errorContainer"></div>
+                <button  id="signup-button" type="submit" name="submit">Submit</button>
+                <div class="register">
+                    <p>Do you have an Account?
+                        <a href="login">Login Here</a>
+                    </p>
+                </div>
+                
+        </div>
+        </form>
+    </div>
+    </div>
+</section>
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/email-validator/2.0.4/email-validator.min.js"></script>
+<script>
+   function validateForm() {
+      var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var errorContainer = document.getElementById('errorContainer');
+      errorContainer.innerHTML = ""; // Clear previous error messages
+
+      var errors = [];
+
+      // Check username
+      if (username.length < 4) {
+         errors.push("Username must be at least 4 characters long.");
+      }
+
+      // Check email
+      if (!validateEmail(email)) {
+         errors.push("Please enter a valid email address.");
+      } else if (!email.endsWith('@gmail.com')) {
+         errors.push("Please enter a valid Gmail address.");
+      }
+
+      // Check phone number
+      if (!validatePhone(phone)) {
+         errors.push("Please enter a valid phone number.");
+      }
+
+      // Check password
+      if (password.length < 8) {
+         errors.push("Password must be at least 8 characters long.");
+      }
+
+      // Check password match
+      if (password !== confirmPassword) {
+         errors.push("Passwords do not match.");
+      }
+
+      if (errors.length > 0) {
+         for (var i = 0; i < errors.length; i++) {
+            var errorElement = document.createElement('p');
+            errorElement.classList.add('error');
+            errorElement.textContent = errors[i];
+            errorContainer.appendChild(errorElement);
+         }
+      }
+
+      return errors.length === 0;
+   }
+
+   function validateEmail(email) {
+      // Basic email validation check
+      var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+   }
+
+   function validatePhone(phone) {
+      // Basic phone number validation check
+      var re = /^\d{10}$/;
+      return re.test(phone);
+   }
+</script>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

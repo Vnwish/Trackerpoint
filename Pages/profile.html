@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Target Page</title>
+</head>
+
+<body>
+  <h1>User Profile</h1>
+
+  <script>
+    // Extract the query parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+
+    // Get the values of the username, email, and phone parameters
+    const username = params.get('username');
+    const email = params.get('email');
+    const phone = params.get('phone');
+
+    // Display the user data on the page
+    const profileDataElement = document.createElement('p');
+    profileDataElement.innerHTML = `<strong>Username:</strong> ${username}<br>
+                                    <strong>Email:</strong> ${email}<br>
+                                    <strong>Phone:</strong> ${phone}`;
+
+    document.body.appendChild(profileDataElement);
+  </script>
+  <a href="/logout">
+    <button>
+      Sign Out
+    </button>
+  </a>
+
+
+  <ul id="alerts-list"></ul>
+  <script src="/Pages/alertslist.js"></script>
+</body>
+
+</html>

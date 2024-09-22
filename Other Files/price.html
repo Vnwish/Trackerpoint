@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Price</title>
+</head>
+
+<body>
+    <h1>Product Price:</h1>
+    <p id="price"></p>
+
+    <script>
+        function getCurrentPrice(itemUrl) {
+  return fetch(`/getPrice?url=${encodeURIComponent(itemUrl)}`)
+    .then(response => response.json())
+    .then(data => {
+      const priceElement = document.getElementById('price');
+      priceElement.textContent = data.price;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+    </script>
+</body>
+
+</html>

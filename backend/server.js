@@ -4,8 +4,11 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const crypto = require('crypto');  
+const db = require('./db');  // Import and execute MongoDB connection
+const mongoose = require('mongoose');
 
 const app = express();
+db(); // Establish MongoDB connection
 
 // Middleware
 const middleware = require('./middleware/authenticate');
@@ -33,26 +36,18 @@ app.use(
     name: 'New-Session', 
     cookie: { maxAge: 60 * 60 * 1000 }, // Session expires after 1 hour
     store: MongoStore.create({
-      mongoUrl: 'mongodb+srv://vishalnagar74405:Mp41vishaldhakad@cluster0.pbtfahk.mongodb.net/Trackerz-Point',
+      client: mongoose.connection.getClient(),  // Use existing MongoDB connection
       collectionName: 'sessions',
       ttl: 60 * 60, // Session TTL set to 1 hour (in seconds) 
     }), 
   })
-  
 );
 
 // Routes
 const routes = require('./routes');
-const { eachOf } = require('async');
-const { parentPort } = require('worker_threads');
 app.use('/', routes);
-
 
 const port = 2000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-
-
- 
